@@ -1,3 +1,5 @@
+# Geometric Brownian Motion (GBM) – Monte Carlo Option Pricing
+
 <img width="989" height="390" alt="mc_hist" src="https://github.com/user-attachments/assets/8b99eacc-e94f-4069-93fb-6ab3083a19e2" />
 Monte Carlo simulation of terminal stock price under Geometric Brownian Motion (GBM)
 
