@@ -33,3 +33,4 @@ This project implements Monte Carlo simulation to price European call options un
 - For quick demo use `n_paths=1e5`. For highly accurate runs, increase to `1e6` but expect longer runtime.
 - No external data required.
 
+<img width="989" height="390" alt="mc_convergence" src="https://github.com/user-attachments/assets/89f7a37a-92c6-475b-afd1-996135ff0ca8" />
