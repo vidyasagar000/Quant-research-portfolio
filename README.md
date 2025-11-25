@@ -1,4 +1,4 @@
-# Monte Carlo Option Pricing (GBM)
+# Geometric Brownian Motion (GBM) – Monte Carlo Option Pricing
 
 **Notebook:** `MonteCarlo_GBM.ipynb`
 
