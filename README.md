@@ -2,15 +2,6 @@
 
 This repository contains interview-ready quantitative finance projects demonstrating time-series analysis, volatility modelling, Monte Carlo option pricing, and cross-asset correlation research. Each project is organized inside `notebooks/` with a short README and example outputs.
 
-quant-portfolio/
-├─ notebooks/
-│  ├─ MonteCarlo_GBM/
-│  ├─ GARCH_RealData/
-│  └─ CrossCorrelation/
-├─ requirements.txt
-├─ .gitignore
-└─ README.md
-
 ## Projects (folders)
 - `notebooks/MonteCarlo_GBM/` — Monte Carlo simulation for European option pricing under GBM.  
 - `notebooks/GARCH_RealData/` — GARCH(1,1) volatility modeling on real stock data and its effect on option valuation.  
