@@ -1,11 +1,43 @@
 # Quant Research Portfolio — Vidyasagar
 
-This repository contains quantitative finance projects demonstrating time-series analysis, volatility modelling, Monte Carlo option pricing, and cross-asset correlation research. Each project is organized inside `notebooks/` with a short README and example outputs.
+A curated portfolio of quantitative finance projects on  
+time-series analysis, stochastic modelling, Monte Carlo simulation, volatility modelling,  
+and cross-asset correlation research.  
 
-## Projects (folders)
-- `notebooks/MonteCarlo_GBM/` — Monte Carlo simulation for European option pricing under GBM.  
-- `notebooks/GARCH_RealData/` — GARCH(1,1) volatility modeling on real stock data and its effect on option valuation.  
-- `notebooks/CrossCorrelation/` — Lead–lag cross-correlation analysis inspired by ZDCF, with permutation-based significance testing.
+These projects reflect real quant workflows and are inspired by methods used at  
+top hedge funds, trading firms, and investment banks.
+
+---
+
+## Projects Overview
+
+All projects are located inside the `notebooks/` folder, each with its own README  
+and example outputs.
+
+### **1. Monte Carlo Option Pricing (GBM)**
+Folder: `notebooks/MonteCarlo_GBM/`  
+- Simulates stock price paths under **Geometric Brownian Motion**  
+- Prices a European call option using Monte Carlo  
+- Shows convergence as simulation paths increase  
+- Includes distribution of terminal stock price \( S_T \)
+
+---
+
+### **2. Volatility Modelling Using GARCH(1,1)**
+Folder: `notebooks/GARCH_RealData/`  
+- Fits a **GARCH(1,1)** model on real market data  
+- Compares sample volatility vs GARCH conditional volatility  
+- Plots realized vs model-based volatility  
+- Uses both to price a European option (`Monte Carlo + Black–Scholes`)
+
+---
+
+### **3. Lead–Lag Cross-Correlation Analysis**
+Folder: `notebooks/CrossCorrelation/`  
+- Evaluates correlation between two assets across time lags  
+- Includes **permutation-based significance testing**  
+- Inspired by ZDCF techniques used in astrophysics  
+- Produces rolling correlation, lag correlation stem plot, and price/returns charts  
 
 ## Quickstart
 1. Create a Python environment and install dependencies:
