@@ -1,6 +1,6 @@
 # Quant Research Portfolio — Vidyasagar
 
-This repository contains interview-ready quantitative finance projects demonstrating time-series analysis, volatility modelling, Monte Carlo option pricing, and cross-asset correlation research. Each project is organized inside `notebooks/` with a short README and example outputs.
+This repository contains quantitative finance projects demonstrating time-series analysis, volatility modelling, Monte Carlo option pricing, and cross-asset correlation research. Each project is organized inside `notebooks/` with a short README and example outputs.
 
 ## Projects (folders)
 - `notebooks/MonteCarlo_GBM/` — Monte Carlo simulation for European option pricing under GBM.  
