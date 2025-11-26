@@ -18,7 +18,6 @@ pip install -r requirements.txt
 
 ## 3) `.gitignore`
 
-## 4) PR template: `.github/PULL_REQUEST_TEMPLATE.md`
 
 ```markdown
 ## How to run
