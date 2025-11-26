@@ -19,7 +19,7 @@ Folder: `notebooks/MonteCarlo_GBM/`
 - Simulates stock price paths under **Geometric Brownian Motion**  
 - Prices a European call option using Monte Carlo  
 - Shows convergence as simulation paths increase  
-- Includes distribution of terminal stock price \( S_T \)
+- Includes distribution of terminal stock price $S_T$
 
 ---
 
