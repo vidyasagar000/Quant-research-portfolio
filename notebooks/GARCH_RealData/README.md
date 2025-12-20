@@ -7,7 +7,7 @@ The realized volatility plot shows the empirical 20-day rolling annualized volat
 
 GARCH Conditional Volatility (annualized)
 <img width="990" height="390" alt="GARCH Conditional Volatility (annualized)" src="https://github.com/user-attachments/assets/5720934f-453f-49de-bea2-61160decac65" />
-The GARCH conditional volatility plot shows the model-implied forecast of future volatility, which is smoother and more stable than the realized volatility. GARCH incorporates past squared returns and past volatility to estimate tomorrow’s variance, capturing persistence and mean reversion. In your output, the GARCH annualized volatility (~21.9%) is noticeably lower than the long-run sample volatility (~28%), meaning the model believes current market conditions are calmer than what historical data alone suggests. This forward-looking forecast is extremely valuable in risk management, trading, and option pricing because it provides a model-based expectation of volatility rather than purely relying on the past.
+The GARCH conditional volatility plot shows the model-implied forecast of future volatility, which is smoother and more stable than the realized volatility. GARCH incorporates past squared returns and past volatility to estimate tomorrow’s variance, capturing persistence and mean reversion. In the above plot, the GARCH annualized volatility (~21.9%) is noticeably lower than the long-run sample volatility (~28%), meaning the model believes current market conditions are calmer than what historical data alone suggests. This forward-looking forecast is extremely valuable in risk management, trading, and option pricing because it provides a model-based expectation of volatility rather than purely relying on the past.
 
 Impact on Option Pricing
 
