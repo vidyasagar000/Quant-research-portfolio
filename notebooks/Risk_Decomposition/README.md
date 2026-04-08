@@ -17,15 +17,15 @@ A quantitative research project applying systematic risk decomposition models to
 risk-decomposition/
 │
 ├── US_Portfolio/
-│   ├── 01_capm_dark.ipynb              ← CAPM beta decomposition
-│   ├── 02_portfolio_risk_dark.ipynb    ← Portfolio risk attribution
-│   ├── 03_fama_french_dark.ipynb       ← Fama-French 3-factor model
+│   ├── 01_CAPM_Beta_Decomposition.ipynb              ← CAPM beta decomposition
+│   ├── 02_Portfolio_Risk_Attribution.ipynb    ← Portfolio risk attribution
+│   ├── 03_Fama_French_3Factor.ipynb       ← Fama-French 3-factor model
 │   ├── output/                         ← All saved charts
 │   └── README.md
 │
 └── India_Portfolio/
-    ├── india_01_capm_dark.ipynb        ← CAPM beta decomposition
-    ├── india_02_portfolio_risk_dark.ipynb  ← Portfolio risk attribution
+    ├── 01_CAPM_Beta_Decomposition.ipynb        ← CAPM beta decomposition
+    ├── 02_Portfolio_Risk_Attribution.ipynb  ← Portfolio risk attribution
     ├── output/                         ← All saved charts
     └── README.md
 ```
