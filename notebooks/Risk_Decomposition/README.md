@@ -2,7 +2,6 @@
 
 A quantitative research project applying systematic risk decomposition models to equity portfolios in two markets — the US (S&P 500) and India (Nifty 50). The central research question is whether the same factor models reveal different risk structures across a developed and an emerging market.
 
-Built by a physicist transitioning into quantitative finance — applying rigorous statistical modelling, stochastic thinking, and empirical analysis to understand what actually drives portfolio risk.
 
 ---
 
