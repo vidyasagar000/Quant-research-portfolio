@@ -2,7 +2,6 @@
 
 A quantitative research project applying systematic risk decomposition models to equity portfolios in two markets — the US (S&P 500) and India (Nifty 50). The central research question is whether the same factor models reveal different risk structures across a developed and an emerging market.
 
-Built by a physicist transitioning into quantitative finance — applying rigorous statistical modelling, stochastic thinking, and empirical analysis to understand what actually drives portfolio risk.
 
 ---
 
@@ -18,15 +17,15 @@ Built by a physicist transitioning into quantitative finance — applying rigoro
 risk-decomposition/
 │
 ├── US_Portfolio/
-│   ├── 01_capm_dark.ipynb              ← CAPM beta decomposition
-│   ├── 02_portfolio_risk_dark.ipynb    ← Portfolio risk attribution
-│   ├── 03_fama_french_dark.ipynb       ← Fama-French 3-factor model
+│   ├── 01_CAPM_Beta_Decomposition.ipynb              ← CAPM beta decomposition
+│   ├── 02_Portfolio_Risk_Attribution.ipynb    ← Portfolio risk attribution
+│   ├── 03_Fama_French_3Factor.ipynb       ← Fama-French 3-factor model
 │   ├── output/                         ← All saved charts
 │   └── README.md
 │
 └── India_Portfolio/
-    ├── india_01_capm_dark.ipynb        ← CAPM beta decomposition
-    ├── india_02_portfolio_risk_dark.ipynb  ← Portfolio risk attribution
+    ├── 01_CAPM_Beta_Decomposition.ipynb        ← CAPM beta decomposition
+    ├── 02_Portfolio_Risk_Attribution.ipynb  ← Portfolio risk attribution
     ├── output/                         ← All saved charts
     └── README.md
 ```
@@ -85,6 +84,8 @@ Extends CAPM with size (SMB) and value (HML) factors. Applied to US portfolio on
 
 In both markets, identical 20% position weights produce highly unequal risk contributions. This is true in the US (AAPL 23.5% vs XOM 11.1%) and in India (INFY 23.1% vs HDFCBANK 16.2%). Weight-based thinking is not risk management.
 
+![US Portfolio Risk Attribution](US_Portfolio/output/02_weight_vs_risk.png)
+
 ### Finding 2 — Individual volatility is a poor predictor of portfolio risk contribution
 
 The most striking result across both portfolios. In the US, XOM is the most volatile individual stock (32.56%) but the best portfolio diversifier (11.1% risk contribution). In India, HDFCBANK has the highest market sensitivity (R²=0.58) but the lowest risk contribution (16.2%). What drives portfolio risk is not individual volatility but correlation structure — how a stock moves relative to everything else simultaneously.
@@ -97,6 +98,8 @@ The most striking result across both portfolios. In the US, XOM is the most vola
 | Avg Idiosyncratic % | 54.9% | 62.9% |
 
 The Nifty 50 explains less of individual Indian stock movements than the S&P 500 does for US stocks. Indian equities are driven by FII flows, currency dynamics, global commodity prices, and domestic regulatory events — forces that the domestic index does not capture. Stock selection matters more in India as a result.
+
+![US vs India CAPM Comparison](India_Portfolio/output/india_01_us_vs_india_comparison.png)
 
 ### Finding 4 — CAPM systematically underestimates systematic risk
 
