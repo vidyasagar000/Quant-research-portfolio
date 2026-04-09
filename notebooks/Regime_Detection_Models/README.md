@@ -87,7 +87,7 @@ Each dot is one trading day colored by detected regime. The 2022–2023 META col
 
 The same asset, the same features — but now time-ordering is respected. The HMM finds a substantially different regime structure to K-Means.
 
-![HMM Regime Chart](HMM/plots/04_regime_chart.png)
+![HMM Regime Chart](HMM/Output/04_regime_chart.png)
 
 | Regime | Return | Volatility | Drawdown | VaR 99% | Avg Duration |
 |---|---|---|---|---|---|
@@ -101,7 +101,7 @@ The same asset, the same features — but now time-ordering is respected. The HM
 
 This output is impossible to produce with K-Means. Each panel shows the model's daily confidence in that regime — values near 1.0 are certainty, values between 0.3–0.7 represent genuine ambiguity that K-Means forces into a hard label.
 
-![State Probabilities](HMM/plots/05_state_probabilities.png)
+![State Probabilities](HMM/Output/05_state_probabilities.png)
 
 ---
 
@@ -109,7 +109,7 @@ This output is impossible to produce with K-Means. Each panel shows the model's 
 
 The transition matrix is not computed after classification — it is a **core parameter learned during Baum-Welch training**. Empirical and learned matrices differ by just 0.0003, confirming excellent convergence.
 
-![Transition Matrix](HMM/plots/03_transition_matrix.png)
+![Transition Matrix](HMM/Output/03_transition_matrix.png)
 
 ```
               Bull    Correction   Crash
@@ -140,7 +140,7 @@ Tomorrow's regime probabilities from the learned transition matrix: Bull 0.2%, C
 
 Both models applied to all four assets. Regime dynamics differ substantially across geographies and asset types — single stocks switch regimes faster and more dramatically than indices.
 
-![Cross Asset HMM](HMM/plots/09_cross_asset_regimes.png)
+![Cross Asset HMM](HMM/Output/09_cross_asset_regimes.png)
 
 ---
 
