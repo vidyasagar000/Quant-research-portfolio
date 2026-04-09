@@ -73,7 +73,7 @@ Both models use the same five engineered features:
 
 Each dot is one trading day colored by detected regime. The 2022–2023 META collapse and COVID flash crash are correctly captured as Crash and Correction episodes.
 
-![KMeans Regime Chart](KMeans/plots/04_regime_chart.png)
+![KMeans Regime Chart](KMeans/Output/04_regime_chart.png)
 
 | Regime | Return | Volatility | Drawdown | VaR 99% | Avg Duration |
 |---|---|---|---|---|---|
