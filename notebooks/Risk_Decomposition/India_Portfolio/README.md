@@ -30,7 +30,7 @@ This is not a limitation of the analysis. It is an honest acknowledgement of dat
 
 ## Notebooks
 
-### `india_01_capm_dark.ipynb` — Single Factor Beta Decomposition
+### `01_CAPM_Beta_Decomposition.ipynb` — Single Factor Beta Decomposition
 
 Fits a CAPM regression for each Indian stock against the Nifty 50 and decomposes total variance into systematic and idiosyncratic components.
 
@@ -58,7 +58,7 @@ The wide scatter of dots around regression lines immediately signals something d
 
 ---
 
-### `india_02_portfolio_risk_dark.ipynb` — Portfolio Risk Attribution
+### `02_Portfolio_Risk_Attribution.ipynb` — Portfolio Risk Attribution
 
 Combines the five Indian stocks into an equal-weighted portfolio and attributes total portfolio risk back to each position.
 
