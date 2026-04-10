@@ -68,7 +68,7 @@ Applies two complementary approaches to identify latent market states across US 
 
 **Key finding:** K-Means classified 77% of META's history as Bull. HMM classified only 31% as Bull — because HMM understands that a moderate-return day inside a sustained volatile period is not a bull day. The models agree on what regimes exist but disagree on when they occur, and HMM's time-ordering makes it the more defensible choice for production risk systems.
 
-**Current regime (April 2026):** Crash — day 9, 99.9% confidence.
+
 
 ---
 
