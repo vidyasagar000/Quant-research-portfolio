@@ -23,7 +23,7 @@ A systematic decomposition of risk across a 5-stock US equity portfolio using th
 
 ## Notebooks
 
-### `01_capm_dark.ipynb` — Single Factor Beta Decomposition
+### `01_CAPM_Beta_Decomposition.ipynb` — Single Factor Beta Decomposition
 
 Fits a CAPM regression for each stock against the S&P 500 and decomposes total variance into systematic (market-driven) and idiosyncratic (stock-specific) components.
 
@@ -49,7 +49,7 @@ Each scatter plot shows one trading day per dot. The white regression line is th
 
 ---
 
-### `02_portfolio_risk_dark.ipynb` — Portfolio Risk Attribution
+### `02_Portfolio_Risk_Attribution.ipynb` — Portfolio Risk Attribution
 
 Combines the five stocks into an equal-weighted portfolio and attributes total portfolio volatility back to each position using Marginal Contribution to Risk (MCR) and Component Contribution to Risk (CCR).
 
@@ -79,7 +79,7 @@ AAPL and JPM over-contribute because their correlation of 0.63 means they move t
 
 ---
 
-### `03_fama_french_dark.ipynb` — Fama-French 3-Factor Decomposition
+### `03_Fama_French_3Factor.ipynb` — Fama-French 3-Factor Decomposition
 
 Extends CAPM by adding two additional systematic factors — SMB (size premium) and HML (value premium) — using daily factor data from Kenneth French's data library.
 
