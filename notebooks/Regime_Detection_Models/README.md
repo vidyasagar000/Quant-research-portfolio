@@ -219,13 +219,7 @@ SYMBOL = 'META'       # Options: 'META', 'TSLA', '^NSEI', 'HDFCBANK.NS'
 
 ---
 
-## Background
 
-Built as part of a quantitative finance research portfolio. Methods draw on stochastic modelling, time series analysis, and statistical inference — skills developed during an MSc in Physics (Astrophysics) and applied to equity market analysis.
-
-The mathematical foundations — hidden state models, likelihood maximisation, information criteria, and sequential probabilistic inference — map directly from astrophysical applications (pulsar detection, exoplanet transit modelling, spectral classification) to financial regime detection.
-
----
 
 ## Tech Stack
 
