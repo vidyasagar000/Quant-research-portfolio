@@ -1,29 +1,22 @@
-Python
+# Personal / not for the public repo
+Interview_Guide.md
 
-pycache/
-*.py[cod]
-*.pyo
-*.pyd
+# Python
+__pycache__/
 *.pyc
-
-Jupyter
-
-.ipynb_checkpoints
-*.nbconvert.ipynb
-
-Data and environments
-
-data/
-*.csv
-*.h5
-*.db
+.ipynb_checkpoints/
+.venv/
 venv/
 env/
-.venv/
-*.sqlite3
 
-OS / IDE
-
+# OS
 .DS_Store
-.vscode/
-.idea/
+Thumbs.db
+
+# Jupyter
+*.ipynb_checkpoints
+
+# Optional: uncomment if you'd rather not track generated data/output artifacts
+# (keep them tracked if you want the repo to be self-contained and reviewable without a re-run)
+# data/
+# output/
