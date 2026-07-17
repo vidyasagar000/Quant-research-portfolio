@@ -52,7 +52,7 @@ Model converged: ✅ True · Log-likelihood: −9,427.53
 
 ### Price History
 
-![Price History](plots/01_price_history.png)
+![Price History](Output/01_price_history.png)
 
 ---
 
@@ -60,7 +60,7 @@ Model converged: ✅ True · Log-likelihood: −9,427.53
 
 HMM uses **AIC and BIC** (information criteria) rather than elbow/silhouette. Both penalise model complexity — lower is better. AIC and BIC both continue falling past n = 3, suggesting the data contains more than three patterns statistically. **n = 3 is chosen deliberately** for financial interpretability — Bull / Correction / Crash maps cleanly to actionable market states. This is a documented modelling decision, not an oversight.
 
-![AIC BIC](plots/02_aic_bic.png)
+![AIC BIC](Output/02_aic_bic.png)
 
 ---
 
@@ -70,7 +70,7 @@ This is the defining advantage of HMM. The transition matrix is a **core model p
 
 The empirical matrix (computed from the decoded sequence) matched the learned matrix with a mean absolute difference of just **0.0003**, confirming excellent model convergence.
 
-![Transition Matrix](plots/03_transition_matrix.png)
+![Transition Matrix](Output/03_transition_matrix.png)
 
 ```
 Learned Transition Matrix:
@@ -89,7 +89,7 @@ Key findings from the transition matrix:
 
 ### Regime-Colored Price Chart
 
-![Regime Chart](plots/04_regime_chart.png)
+![Regime Chart](Output/04_regime_chart.png)
 
 The HMM correctly identifies the 2022–2023 META collapse as a sustained Crash regime (red), the moderate corrections in 2018–2020 as Correction (blue), and the strong trending periods as Bull (green). As of April 2026 — **current regime: Crash**, day 9, with 97.2% probability of remaining in Crash tomorrow.
 
@@ -99,7 +99,7 @@ The HMM correctly identifies the 2022–2023 META collapse as a sustained Crash 
 
 This plot is impossible to produce with K-Means. It shows the model's **daily confidence** in each regime. Values near 1.0 indicate certainty; values between 0.3–0.7 represent genuine regime ambiguity that K-Means would force into a hard assignment.
 
-![State Probabilities](plots/05_state_probabilities.png)
+![State Probabilities](Output/05_state_probabilities.png)
 
 - **Green panel (Bull):** Solid blocks in 2016–2017 and 2024. Sharp black spikes show the exact days of regime transition — the model is confident when in bull
 - **Blue panel (Correction):** Highly dynamic — the model frequently sees mixed Bull/Correction signals, reflecting the choppy nature of consolidation phases
@@ -111,7 +111,7 @@ This plot is impossible to produce with K-Means. It shows the model's **daily co
 
 HMM classifies META's history very differently from K-Means. Where K-Means found 77% Bull days, HMM finds only **31% Bull** — because HMM accounts for sequential persistence and separates true trending days from choppy moderate-volatility days that K-Means lumped into Bull.
 
-![Regime Distribution](plots/06_regime_distribution.png)
+![Regime Distribution](Output/06_regime_distribution.png)
 
 | Regime | Days | % of History |
 |---|---|---|
@@ -125,7 +125,7 @@ HMM classifies META's history very differently from K-Means. Where K-Means found
 
 The three distributions show clearly distinct volatility profiles. Bull is tight (σ = 1.19%), Correction is moderate (σ = 1.92%), and Crash is wide (σ = 3.99%) with visible fat tails. The Crash regime has a near-zero mean return (μ = 0.0003) — HMM classifies this regime by its **volatility structure**, not just its return level, which is statistically more robust.
 
-![Return Distributions](plots/07_return_distributions.png)
+![Return Distributions](Output/07_return_distributions.png)
 
 ---
 
@@ -133,7 +133,7 @@ The three distributions show clearly distinct volatility profiles. Bull is tight
 
 VaR spikes align precisely with the regime chart — the deepest red spikes (highest risk) correspond to periods classified as Crash. Parametric Gaussian VaR underestimates true tail risk in crash regimes due to fat-tailed return distributions — a known limitation acknowledged here.
 
-![VaR Overlay](plots/08_var_overlay.png)
+![VaR Overlay](Output/08_var_overlay.png)
 
 ---
 
@@ -182,7 +182,7 @@ Tomorrow → Bull : 0.2%  |  Correction : 2.7%  |  Crash : 97.2%
 
 The same HMM applied to Tesla, NIFTY 50, and HDFC Bank. Tesla shows rapid regime switching and prolonged red periods post-2020. NIFTY 50 shows clear sequential progression with minimal crash exposure. HDFC Bank alternates more frequently than the broad index.
 
-![Cross Asset](plots/09_cross_asset_regimes.png)
+![Cross Asset](Output/09_cross_asset_regimes.png)
 
 ---
 

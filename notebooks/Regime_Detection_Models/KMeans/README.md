@@ -42,7 +42,7 @@ K-Means groups each trading day into one of *k* clusters by minimising within-cl
 
 ### Price History
 
-![Price History](plots/01_price_history.png)
+![Price History](Output/01_price_history.png)
 
 ---
 
@@ -50,7 +50,7 @@ K-Means groups each trading day into one of *k* clusters by minimising within-cl
 
 High-volatility periods cluster together rather than being randomly dispersed. This is the empirical justification for regime modelling — if volatility were i.i.d., there would be no persistent states to detect.
 
-![Volatility Clustering](plots/02_volatility_clustering.png)
+![Volatility Clustering](Output/02_volatility_clustering.png)
 
 ---
 
@@ -58,7 +58,7 @@ High-volatility periods cluster together rather than being randomly dispersed. T
 
 k = 2 peaks on silhouette score (mathematically cleanest). **k = 3 is chosen** for financial interpretability — Bull / Correction / Crash maps to actionable, distinct market states. Silhouette at k = 3 remains acceptable at 0.47.
 
-![Model Selection](plots/03_elbow_silhouette.png)
+![Model Selection](Output/03_elbow_silhouette.png)
 
 ---
 
@@ -66,7 +66,7 @@ k = 2 peaks on silhouette score (mathematically cleanest). **k = 3 is chosen** f
 
 Each dot represents one trading day, colored by detected regime. The 2022–2023 collapse and COVID flash crash are correctly identified as Crash/Correction episodes.
 
-![Regime Chart](plots/04_regime_chart.png)
+![Regime Chart](Output/04_regime_chart.png)
 
 ---
 
@@ -74,7 +74,7 @@ Each dot represents one trading day, colored by detected regime. The 2022–2023
 
 META spends 77.2% of its history in a Bull regime — consistent with its strong long-term growth trajectory. Crash episodes account for only 3.5% of days but produce the most severe drawdowns.
 
-![Regime Distribution](plots/05_regime_distribution.png)
+![Regime Distribution](Output/05_regime_distribution.png)
 
 ---
 
@@ -82,7 +82,7 @@ META spends 77.2% of its history in a Bull regime — consistent with its strong
 
 The x-axis width tells the story — Bull returns are tight (σ = 1.83%), Correction is wider (σ = 3.37%), and Crash is extreme (σ = 5.83%) with visible fat tails extending to ±30%. This fat-tail structure is why parametric Gaussian VaR underestimates crash-regime risk.
 
-![Return Distributions](plots/06_return_distributions.png)
+![Return Distributions](Output/06_return_distributions.png)
 
 ---
 
@@ -90,7 +90,7 @@ The x-axis width tells the story — Bull returns are tight (σ = 1.83%), Correc
 
 Computed empirically after classification — **not a model parameter**. Diagonal values show regime persistence. Notable: Crash → Bull direct transition is 0.000 — recoveries always pass through Correction first.
 
-![Transition Matrix](plots/07_transition_matrix.png)
+![Transition Matrix](Output/07_transition_matrix.png)
 
 ---
 
@@ -98,7 +98,7 @@ Computed empirically after classification — **not a model parameter**. Diagona
 
 VaR spikes during the 2018 Q4 selloff, COVID crash, and the 2022 META collapse are clearly visible. Spikes in the red band coincide with the Crash regime classifications above.
 
-![VaR Overlay](plots/08_var_overlay.png)
+![VaR Overlay](Output/08_var_overlay.png)
 
 ---
 
@@ -126,7 +126,7 @@ VaR spikes during the 2018 Q4 selloff, COVID crash, and the 2022 META collapse a
 
 The same model applied to Tesla, NIFTY 50, and HDFC Bank. Each asset exhibits distinct regime dynamics — Tesla shows rapid regime switching post-2020 while NIFTY 50 shows longer, more persistent bull phases.
 
-![Cross Asset](plots/09_cross_asset_regimes.png)
+![Cross Asset](Output/09_cross_asset_regimes.png)
 
 ---
 
