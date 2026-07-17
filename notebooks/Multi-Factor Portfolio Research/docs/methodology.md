@@ -97,7 +97,16 @@ $$w_i^{(t+1)} = \frac{w_i^{(t)}(1 + r_i^{(t)})}{\sum_j w_j^{(t)}(1 + r_j^{(t)})}
 
 **Turnover and transaction cost at each rebalance:**
 
-$$\text{turnover} = \frac{1}{2}\sum_i \left|w_i^{\text{target}} - w_i^{\text{drifted}}\right|, \qquad \text{cost} = \text{turnover} \times \text{DEFAULT\_COST\_BPS}$$
+$$
+\tau = \frac{1}{2}\sum_i \left| w_i^{\mathrm{target}} - w_i^{\mathrm{drifted}} \right|
+$$
+
+$$
+\mathrm{cost} = \tau \times c_{\mathrm{bps}}
+$$
+
+where $\tau$ is one-way turnover and $c_{\mathrm{bps}}$ is the transaction cost assumption in
+basis points (`DEFAULT_COST_BPS` in code, default 20).
 
 The buy and sell legs are treated as one combined cost (not doubled). Cost is deducted the same
 day the rebalance-date return is realised, using the pre-rebalance drifted weights for that
@@ -143,7 +152,12 @@ that day's average only.
 
 **Transaction-cost sensitivity sweep (0/10/20/50 bps), closed-form:**
 
-$$\text{net\_return\_at\_bps} = \text{gross\_return} - \frac{\text{turnover\_pct}}{100}\times\frac{\text{bps}}{10000}\quad\text{(rebalance days only)}$$
+$$
+R_{\mathrm{net}} = R_{\mathrm{gross}} - \frac{T}{100} \cdot \frac{c_{\mathrm{bps}}}{10000}
+$$
+
+applied on rebalance days only; unchanged on all other days. $T$ is turnover (%) at that
+rebalance and $c_{\mathrm{bps}}$ is the cost assumption being swept (0/10/20/50).
 
 Exact because turnover itself does not depend on the cost assumption — validated against a full
 engine re-run at an alternate cost level (agreement to floating-point precision).
