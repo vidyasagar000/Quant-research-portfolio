@@ -28,6 +28,11 @@ Regime Detection — K-Means clustering + Hidden Markov Model
 Where does portfolio risk actually come from?
         ↓
 Risk Decomposition — CAPM, Portfolio Attribution, Fama-French across US and India
+
+Can a systematic strategy actually harvest return while surviving real-world frictions?
+        ↓
+Multi-Factor Portfolio Framework — factor construction, walk-forward backtest,
+rotation & regime diagnostics on Indian equities
 ```
 
 ---
@@ -68,8 +73,6 @@ Applies two complementary approaches to identify latent market states across US 
 
 **Key finding:** K-Means classified 77% of META's history as Bull. HMM classified only 31% as Bull — because HMM understands that a moderate-return day inside a sustained volatile period is not a bull day. The models agree on what regimes exist but disagree on when they occur, and HMM's time-ordering makes it the more defensible choice for production risk systems.
 
-
-
 ---
 
 ### 5. Risk Decomposition — US & India
@@ -81,15 +84,26 @@ Applies CAPM beta decomposition, portfolio risk attribution, and Fama-French 3-f
 
 ---
 
+### 6. Multi-Factor Portfolio Research Framework — Indian Equities
+`notebooks/Multi-Factor Portfolio Research/`
+
+Risk Decomposition establishes *where* risk comes from and shows that equal weight is not equal risk. This project asks the natural next question: can that understanding be turned into an actual systematic strategy, built and stress-tested the way an institutional desk would? A six-notebook pipeline constructs a dynamically-reconstituted Indian Large + Mid Cap universe, ranks it on a four-factor composite (Momentum, Low Volatility, Maximum Drawdown, Beta), selects a Top-20 portfolio under two weighting schemes (Equal Weight vs. True Equal Risk Contribution) and three rebalancing frequencies, then runs all six combinations through a realistic walk-forward backtest — weight drift, transaction costs, the full mechanics — before evaluating the result on benchmark-relative performance, holdings-rotation quality, factor attribution, and market-regime conditioning. The regime layer reuses the same Gaussian HMM approach from Project 4, now applied to a live backtest rather than a standalone classification exercise.
+
+**Key finding:** every one of the six (frequency × weighting) combinations outperformed both NIFTY 50 and a Universe Average Return benchmark on every risk-adjusted metric, and that edge held in every HMM-identified regime — Bull, Bear, and High Volatility alike, not just on average. But Rotation Analysis complicates the headline: only 48.4% of individual holdings swaps were profitable in hindsight, and the top 3 rotations accounted for 42% of all positive replacement alpha. The outperformance is real, but it is concentrated in a handful of large successful trades rather than a uniformly consistent signal — the same instinct as Project 4's regime work: two ways of looking at the same result can each be correct and still tell different stories, and the less flattering one is usually the more honest one.
+
+---
+
 ## Key Themes Across All Projects
 
-**Markets are non-stationary.** GARCH shows volatility clusters. Regime detection shows behaviour shifts. Risk decomposition shows correlations change in crises. Every project confirms this from a different angle.
+**Markets are non-stationary.** GARCH shows volatility clusters. Regime detection shows behaviour shifts. Risk decomposition shows correlations change in crises. The Multi-Factor Portfolio's regime overlay confirms it a fourth way — and confirms outperformance survives it.
 
-**Equal weight is not risk management.** Both US and Indian portfolios show that identical position weights produce dramatically unequal risk contributions.
+**Equal weight is not risk management.** US and Indian portfolios both show that identical position weights produce dramatically unequal risk contributions; the Multi-Factor Portfolio project tests the natural fix (Equal Risk Contribution) directly against it and finds the difference is real but modest.
 
-**Model choice matters.** K-Means vs HMM. CAPM vs Fama-French. GARCH vol vs implied vol. Each pair tells a different story from the same data — and understanding why they differ is where the real insight lives.
+**Model choice matters.** K-Means vs HMM. CAPM vs Fama-French. GARCH vol vs implied vol. Mean vs median replacement alpha. Each pair tells a different story from the same data — and understanding why they differ is where the real insight lives.
 
-**Physics instincts transfer.** Separating signal from noise. Distinguishing systematic from idiosyncratic. Testing model assumptions before trusting outputs. These are physics research habits applied to financial data.
+**A headline number is not the whole answer.** Outperformance, on its own, is the least interesting finding in the Multi-Factor Portfolio project — what matters is that it survives a transaction-cost sweep, holds across every market regime, and is honestly disclosed as concentrated in a handful of trades rather than uniformly consistent. Every project in this portfolio ends with the equivalent question: what does this result look like once you stress-test it?
+
+**Physics instincts transfer.** Separating signal from noise. Distinguishing systematic from idiosyncratic. Testing model assumptions before trusting outputs. These are physics research habits applied to financial data, all the way through to a full portfolio backtest.
 
 ---
 
@@ -99,13 +113,13 @@ Applies CAPM beta decomposition, portfolio risk attribution, and Fama-French 3-f
 pip install -r requirements.txt
 ```
 
-Each notebook is self-contained. Run cells top to bottom. All data downloaded fresh via `yfinance` and `pandas-datareader`.
+Each notebook is self-contained. Run cells top to bottom. All data downloaded fresh via `yfinance`, `pandas-datareader`, and (for the Multi-Factor Portfolio project) AMFI's public stock categorisation data.
 
 ---
 
 ## Tech Stack
 
-Python · NumPy · Pandas · Matplotlib · Statsmodels · Scikit-learn · ARCH · hmmlearn · yfinance
+Python · NumPy · Pandas · Matplotlib · Statsmodels · Scikit-learn · SciPy · ARCH · hmmlearn · yfinance
 
 ---
 
@@ -119,9 +133,17 @@ Quant-research-portfolio/
 │   ├── GARCH_RealData/
 │   ├── CrossCorrelation/
 │   ├── Regime_Detection/
-│   └── Risk_Decomposition/
-│       ├── US_Portfolio/
-│       └── India_Portfolio/
+│   ├── Risk_Decomposition/
+│   │   ├── US_Portfolio/
+│   │   └── India_Portfolio/
+│   └── Multi-Factor Portfolio Research/
+│       ├── NB01_Universe_Construction.ipynb
+│       ├── NB02_Factor_Research.ipynb
+│       ├── NB03_Portfolio_Construction.ipynb
+│       ├── NB04_WalkForward_Backtest.ipynb
+│       ├── NB05_Portfolio_Analytics.ipynb
+│       ├── NB06_Regime_Diagnostics.ipynb
+│       └── docs/                  # methodology, design decisions, key findings
 │
 ├── requirements.txt
 └── README.md
